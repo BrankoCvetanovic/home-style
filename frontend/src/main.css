@@ -12,11 +12,15 @@
 }
 
 .container__slider > button {
-  background-color: transparent;
+  background: rgba(107, 105, 105, 0.5450980392);
   outline: none;
   border: 0;
-  color: whitesmoke;
+  color: rgb(255, 255, 255);
   font-size: 24px;
+}
+
+.container__slider > button:hover {
+  background: rgba(88, 87, 87, 0.6823529412);
 }
 
 .container__slider > button:active {
@@ -122,4 +126,9 @@
 
 body {
   height: 200vh;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */

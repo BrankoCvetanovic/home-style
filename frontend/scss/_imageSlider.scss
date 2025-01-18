@@ -12,13 +12,16 @@
   }
   
   .container__slider > button {
-    background-color: transparent;
+    
+    background: #6b69698b;
     outline: none;
     border: 0;
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
     font-size: 24px;
   }
-  
+  .container__slider > button:hover{
+    background: #585757ae;
+  }
   .container__slider > button:active {
     color: black;
   }

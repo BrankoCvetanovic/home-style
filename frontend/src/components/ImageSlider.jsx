@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import { IconButton } from "@mui/material";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export default function ImageSlider({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -86,24 +89,28 @@ export default function ImageSlider({ children }) {
         })}
       </div>
 
-      <button
+      <IconButton
+        sx={{ position: "absolute" }}
+        size="large"
         className="slider__btn-next"
         onClick={(e) => {
           e.preventDefault();
           slideNext();
         }}
       >
-        {">"}
-      </button>
-      <button
+        <ArrowForwardIosIcon />
+      </IconButton>
+      <IconButton
+        sx={{ position: "absolute" }}
+        size="large"
         className="slider__btn-prev"
         onClick={(e) => {
           e.preventDefault();
           slidePrev();
         }}
       >
-        {"<"}
-      </button>
+        <ArrowBackIosIcon />
+      </IconButton>
     </div>
   );
 }
