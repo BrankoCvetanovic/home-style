@@ -162,6 +162,45 @@
   color: black;
 }
 
+.hamburger {
+  display: none;
+}
+
+.close {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    position: static;
+    padding: 20px 30px;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-bar {
+    position: fixed;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    left: 40%;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    justify-content: center;
+    background: rgba(162, 157, 64, 0.304);
+  }
+  .nav-bar .close {
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+  }
+}
+.active {
+  display: flex;
+}
+
 .home-about {
   border: 2px solid #b6a05b;
   margin: 100px 10%;

@@ -6,7 +6,6 @@ export default function HomePage() {
     <>
       <ImageSlider>
         {sliderImages.map((image, index) => {
-          console.log(index);
           return (
             <Image
               key={index}
