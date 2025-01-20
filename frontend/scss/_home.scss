@@ -1,0 +1,13 @@
+.home-about{
+    border: 2px solid #b6a05b;
+    margin: 100px 10%;
+    padding: 50px;
+    font-size: 1.6rem;
+}
+@include media-md{
+   .home-about{
+    margin: 70px 5%;
+    padding: 30px;
+    font-size: 1rem;
+   }
+  }

@@ -1,8 +1,13 @@
 .header{
     padding: 20px 100px;
+    position: fixed;
     display: flex;
+    right: 0px;
+    left: 0px;
     justify-content: space-between;
     align-items: center;
+    background: rgba(162, 157, 64, 0.304);
+    z-index: 1;
 }
 .logo{
     font-size: 2rem;
@@ -11,4 +16,8 @@
     display: flex;
     gap: 25px;
     font-size: 1.4rem;
+    align-items: center;
+}
+.nav-bar > button {
+    color: black;
 }
