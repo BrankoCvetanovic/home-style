@@ -1,6 +1,16 @@
 import galeryImages from "../data/galeryImages";
+import ImageModal from "../components/ImageModal";
+import { useRef, useState } from "react";
 
 export default function GaleryPage() {
+  const modal = useRef();
+  const [imageRef, setImageRef] = useState("");
+
+  function handleOpenImage(image) {
+    setImageRef(image);
+    modal.current.open();
+  }
+
   return (
     <div className="galery">
       <div className="info">
@@ -12,11 +22,12 @@ export default function GaleryPage() {
       </div>
       <ul className="galery-container">
         {galeryImages.map((image, index) => (
-          <li key={index}>
-            <img loading="leazy" src={image} alt="" />
+          <li onClick={() => handleOpenImage(image)} key={index}>
+            <img src={image} alt="" />
           </li>
         ))}
       </ul>
+      <ImageModal ref={modal} image={imageRef} />
     </div>
   );
 }

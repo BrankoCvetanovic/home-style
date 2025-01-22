@@ -1,7 +1,7 @@
 .galery{
     display: flex;
     flex-direction: column;
-    padding: 7% 10%;
+    padding: 10% 10%;
     .info{
         text-align: center;
         h1{
@@ -24,12 +24,34 @@
        }
     }
 }
+.image-modal {
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    margin: 0;
+    padding: 0;
+    border: none; 
+    width: 60%; 
+
+    outline: none;
+    img{
+        width: 100%;
+        z-index: 20;
+    }
+    &::backdrop{
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
 @include media-mmd{
     .galery{
-        padding: 100px 20px;
+        padding: 100px 40px;
         .galery-container{
             grid-template-columns: 1fr;
         }
     }
-
+    .image-modal{
+        width: 90%; 
+    }
 }
