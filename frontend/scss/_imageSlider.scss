@@ -28,12 +28,12 @@
   
   .slider__btn-next {
     position: absolute;
-    right: 0;
+    right: 10px;
   }
   
   .slider__btn-prev {
     position: absolute;
-    left: 0;
+    left: 10px;
   }
   
   .container__slider__links {
@@ -130,5 +130,8 @@
       max-width: none;
       width: 100%;
       font-size: 3rem;
+    }
+    .container__slider__links{
+      display: none;
     }
   }

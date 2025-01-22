@@ -1,0 +1,35 @@
+.galery{
+    display: flex;
+    flex-direction: column;
+    padding: 7% 10%;
+    .info{
+        text-align: center;
+        h1{
+            color: rgb(6, 42, 6)
+        }
+        p{
+            font-size: 1.2rem;
+        }
+    }
+    .galery-container{
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap:30px 30px ;
+       overflow: hidden;
+       align-items: center;
+    
+       img{
+        width: 100%;
+        border-radius: 12px;
+       }
+    }
+}
+@include media-mmd{
+    .galery{
+        padding: 100px 20px;
+        .galery-container{
+            grid-template-columns: 1fr;
+        }
+    }
+
+}

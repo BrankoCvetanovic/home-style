@@ -2,6 +2,8 @@ import { NavLink } from "react-router";
 import { IconButton } from "@mui/material";
 import ContrastIcon from "@mui/icons-material/Contrast";
 import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,20 +20,26 @@ export default function Header() {
     <div className="header">
       <div className="logo">Logo</div>
       <div className={isOpen ? "nav-bar active" : "nav-bar"}>
-        <button onClick={handleCloseMenu} className="close">
-          x
-        </button>
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/galery"}>Galery</NavLink>
-        <NavLink to={"/contact"}>Contact</NavLink>
+        <IconButton onClick={handleCloseMenu} className="close">
+          <CloseIcon />
+        </IconButton>
+        <NavLink onClick={handleCloseMenu} to={"/"}>
+          Home
+        </NavLink>
+        <NavLink onClick={handleCloseMenu} to={"/galery"}>
+          Galery
+        </NavLink>
+        <NavLink onClick={handleCloseMenu} to={"/contact"}>
+          Contact
+        </NavLink>
         <IconButton>
           <ContrastIcon />
         </IconButton>
       </div>
       {!isOpen ? (
-        <button onClick={handleOpenMenu} className="hamburger">
-          ##
-        </button>
+        <IconButton onClick={handleOpenMenu} className="hamburger">
+          <MenuIcon />
+        </IconButton>
       ) : null}
     </div>
   );
