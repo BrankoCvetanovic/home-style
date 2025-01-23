@@ -6,8 +6,8 @@
     left: 0px;
     justify-content: space-between;
     align-items: center;
-    background: rgba(162, 157, 64, 0.304);
-    z-index: 1;
+    background: #b69f5b9a; 
+    z-index: 2;
     .hamburger{
         display: none;
     }
@@ -31,7 +31,6 @@
 
 @include media-mmd{
     .header{
-        position: static;
         padding: 20px 30px;
         .hamburger{
             display: block;
@@ -49,9 +48,15 @@
         bottom: 0;
         z-index: 3;
         justify-content: center;
-        background: rgba(162, 157, 64, 0.304);
+        background: rgba(57, 57, 49, 0.649);
         transform: translateX(100%); 
         transition: transform 0.4s ease-in-out;
+        a{
+            color: rgb(243, 237, 225);
+        }
+        button{
+            color: rgb(243, 237, 225);
+        }
         .close{
             display: block;
             position: absolute;

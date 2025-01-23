@@ -46,6 +46,11 @@
 
 @include media-mmd{
     .galery{
+        .info{
+            p{
+                font-size: 1rem;
+        }
+    }
         padding: 100px 40px;
         .galery-container{
             grid-template-columns: 1fr;

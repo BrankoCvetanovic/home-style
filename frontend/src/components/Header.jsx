@@ -4,9 +4,30 @@ import ContrastIcon from "@mui/icons-material/Contrast";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion, useScroll, useMotionValueEvent } from "motion/react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [colorSettings, setColorSettings] = useState({
+    backgroundColor: "#b69f5b9a",
+    border: "none",
+  });
+
+  const { scrollYProgress } = useScroll();
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > 0) {
+      setColorSettings({
+        backgroundColor: "white",
+        borderBottom: "solid 3px #b69f5b9a",
+      });
+    } else {
+      setColorSettings({
+        backgroundColor: "#b69f5b9a",
+        border: "none",
+      });
+    }
+  });
 
   function handleOpenMenu() {
     setIsOpen((prev) => !prev);
@@ -16,8 +37,12 @@ export default function Header() {
     setIsOpen(false);
   }
 
+  function changeColor() {
+    setColor("white");
+  }
+
   return (
-    <div className="header">
+    <motion.div style={colorSettings} className="header">
       <div className="logo">Logo</div>
       <div className={isOpen ? "nav-bar active" : "nav-bar"}>
         <IconButton onClick={handleCloseMenu} className="close">
@@ -32,7 +57,7 @@ export default function Header() {
         <NavLink onClick={handleCloseMenu} to={"/contact"}>
           Contact
         </NavLink>
-        <IconButton>
+        <IconButton onClick={changeColor}>
           <ContrastIcon />
         </IconButton>
       </div>
@@ -41,6 +66,6 @@ export default function Header() {
           <MenuIcon />
         </IconButton>
       ) : null}
-    </div>
+    </motion.div>
   );
 }
