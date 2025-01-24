@@ -20,7 +20,6 @@ export default function Header() {
       setColorSettings({
         backgroundColor: "white",
         borderBottom: "solid 3px #b69f5b9a",
-        padding: "20px 100px",
       });
     } else {
       setColorSettings({
