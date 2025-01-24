@@ -2,6 +2,7 @@
     position:relative;
     border-top: 2px solid #b6a05b;
     margin: 200px 10%;
+    margin-bottom: 100px;
     padding: 10%;
     font-size: 1.6rem;
     .decor{
@@ -39,6 +40,19 @@
         }
         p{
             font-size: 1.1rem;
+        }
+    }
+}
+@include media-mmd{
+    .middle{
+        flex-direction: column;
+    }
+}
+@include media-large{
+    .middle{
+        padding: 5%;
+        .info{
+            padding: 30px;
         }
     }
 }

@@ -63,6 +63,9 @@
 }
 
 .slider__item {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
   background: white;
   padding-bottom: 10px;
   box-sizing: border-box;
@@ -75,6 +78,10 @@
   transition: transform 1s ease;
 }
 
+.slider__item img {
+  height: 100vh;
+}
+
 .image-note {
   position: absolute;
   background: #b6a05b;
@@ -85,6 +92,7 @@
   height: -moz-fit-content;
   height: fit-content;
   bottom: 0px;
+  left: 0;
   padding: 8% 2%;
   font-size: 4rem;
   font-weight: 700;
@@ -123,11 +131,6 @@
   transform: translateX(-300%);
 }
 
-.slider__item img {
-  min-width: 100%;
-  height: 100vh;
-}
-
 @media screen and (max-width: 900px) {
   .image-note {
     max-width: none;
@@ -138,12 +141,17 @@
     display: none;
   }
 }
+@media screen and (min-width: 1550px) {
+  .slider__item img {
+    min-width: 100%;
+  }
+}
 .header {
-  padding: 20px 100px;
+  padding: 25px 100px;
   position: fixed;
   display: flex;
-  right: 0px;
-  left: 0px;
+  right: 0;
+  left: 0;
   justify-content: space-between;
   align-items: center;
   background: rgba(182, 159, 91, 0.6039215686);
@@ -216,6 +224,7 @@
   position: relative;
   border-top: 2px solid #b6a05b;
   margin: 200px 10%;
+  margin-bottom: 100px;
   padding: 10%;
   font-size: 1.6rem;
 }
@@ -259,6 +268,19 @@
   font-size: 1.1rem;
 }
 
+@media screen and (max-width: 900px) {
+  .middle {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .middle {
+    padding: 5%;
+  }
+  .middle .info {
+    padding: 30px;
+  }
+}
 @media screen and (max-width: 700px) {
   .home-about {
     margin: 150px 5%;
@@ -269,7 +291,7 @@
 .galery {
   display: flex;
   flex-direction: column;
-  padding: 10% 10%;
+  padding: 10%;
 }
 .galery .info {
   text-align: center;
@@ -325,15 +347,21 @@
     width: 90%;
   }
 }
+.contact {
+  padding: 10%;
+  min-height: 100vh;
+}
+
 :root {
   box-sizing: border-box;
   font-family: "Nunito Sans", serif;
 }
 
 body {
-  height: 200vh;
+  position: relative;
   margin: 0;
   padding: 0;
+  padding-bottom: 90px;
   box-sizing: border-box;
 }
 
@@ -352,6 +380,10 @@ h1 {
 }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   background: #292929;
   color: #f4f3ef;

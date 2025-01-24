@@ -20,6 +20,7 @@ export default function Header() {
       setColorSettings({
         backgroundColor: "white",
         borderBottom: "solid 3px #b69f5b9a",
+        padding: "20px 100px",
       });
     } else {
       setColorSettings({
@@ -35,10 +36,6 @@ export default function Header() {
 
   function handleCloseMenu() {
     setIsOpen(false);
-  }
-
-  function changeColor() {
-    setColor("white");
   }
 
   return (
@@ -57,7 +54,7 @@ export default function Header() {
         <NavLink onClick={handleCloseMenu} to={"/contact"}>
           Contact
         </NavLink>
-        <IconButton onClick={changeColor}>
+        <IconButton>
           <ContrastIcon />
         </IconButton>
       </div>
