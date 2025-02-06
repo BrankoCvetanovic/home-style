@@ -1,0 +1,36 @@
+name: Deploy Vite React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Pokreće se kada push-uješ na main granu
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: homestyle/frontend
+
+      - name: Set Environment Variables
+        run: echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env
+        working-directory: homestyle/frontend
+
+      - name: Build Project
+        run: npm run build
+        working-directory: homestyle/frontend
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: homestyle/frontend/dist  # Putanja do build fajlova
