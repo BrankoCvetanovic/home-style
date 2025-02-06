@@ -19,18 +19,18 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: homestyle/frontend
+        working-directory: homestyle/frontend  # Ispravka putanje
 
       - name: Set Environment Variables
         run: echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env
-        working-directory: homestyle/frontend
+        working-directory: homestyle/frontend  # Ispravka putanje
 
       - name: Build Project
         run: npm run build
-        working-directory: homestyle/frontend
+        working-directory: homestyle/frontend  # Ispravka putanje
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: homestyle/frontend/dist  # Putanja do build fajlova
+          folder: homestyle/frontend/dist  # Ispravka putanje
