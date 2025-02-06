@@ -3,7 +3,7 @@ name: Deploy Vite React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Pokreće se kada push-uješ na main granu
+      - main
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # Ova opcija sprečava automatsku upotrebu kredencijala, tako da ne pokušava GitHub automatski push-ovati na main granu
+          persist-credentials: false  # Sprečava automatsku autentifikaciju
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -21,26 +21,26 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: frontend  # Ispravka putanje
+        working-directory: frontend
 
       - name: Set Environment Variables
         run: echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env
-        working-directory: frontend  # Ispravka putanje
+        working-directory: frontend
 
       - name: Build Project
         run: npm run build
-        working-directory: frontend  # Ispravka putanje
+        working-directory: frontend
 
       - name: Setup Git for Deployment
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "youremail@example.com"  # Postavi svoj email ovde
-          git remote set-url origin https://github.com/${{ github.repository }}.git  # Koristi HTTPS URL za repozitorijum
+          git config --global user.email "youremail@example.com"
+          git remote set-url origin https://github.com/${{ github.repository }}.git
         working-directory: frontend
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # Osiguraj se da je ova grana podešena na Pages
-          folder: frontend/dist  # Putanja do build foldera
-
+          branch: gh-pages
+          folder: frontend/dist
+          token: ${{ secrets.GITHUB_TOKEN }} 
