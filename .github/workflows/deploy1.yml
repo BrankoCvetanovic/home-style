@@ -1,0 +1,46 @@
+name: Deploy Vite React App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Sprečava automatsku autentifikaciju
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: frontend
+
+      - name: Set Environment Variables
+        run: echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" > .env
+        working-directory: frontend
+
+      - name: Build Project
+        run: npm run build
+        working-directory: frontend
+
+      - name: Setup Git for Deployment
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "youremail@example.com"
+          git remote set-url origin https://github.com/${{ github.repository }}.git
+        working-directory: frontend
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: frontend/dist
+          token: ${{ secrets.GITHUB_TOKEN }} 
