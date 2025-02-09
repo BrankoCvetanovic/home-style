@@ -44,8 +44,9 @@ const ImageModal = forwardRef(({ image }, ref) => {
 
   return createPortal(
     <dialog id="dialog" ref={modal} className="image-modal">
-      <div className="overlay"></div>
-      <img src={image} alt="" />
+      <div className="image-container">
+        <img src={image} alt="" />
+      </div>
     </dialog>,
     document.getElementById("modal")
   );

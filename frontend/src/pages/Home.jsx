@@ -1,6 +1,6 @@
 import ImageSlider from "../components/ImageSlider";
 import sliderImages from "../data/sliderImages";
-import wardrobePic from "../assets/712i2n2h5+L.jpg";
+import wardrobePic from "../assets/galery/pic4.jpg";
 import Image from "../components/Image";
 import { motion } from "motion/react";
 
@@ -31,15 +31,12 @@ export default function HomePage() {
           transition={{ duration: 0.9 }}
           className="decor"
         ></motion.div>
-        Dobrodošli u [Naziv kompanije], gde se strast prema dizajnu i vrhunskoj
-        izradi spaja kako bismo stvorili nameštaj koji inspiriše i unapređuje
-        vaš prostor. Specijalizovani smo za izradu visokokvalitetnih kuhinja po
-        meri, prilagođenih vašem ukusu, stilu i potrebama. Sa pažnjom prema
-        svakom detalju i korišćenjem najkvalitetnijih materijala, naš cilj je da
-        svaki komad nameštaja bude savršen spoj funkcionalnosti, estetike i
-        trajnosti. Bez obzira na to da li ste u potrazi za modernim
-        minimalističkim rešenjima ili klasičnim, toplim dizajnom, mi ćemo se
-        pobrinuti da vaša vizija postane stvarnost.
+        Dobrodošli u RetroStyle, gde se strast prema dizajnu i vrhunskoj izradi
+        spaja kako bismo stvorili nameštaj koji inspiriše i unapređuje vaš
+        prostor. Specijalizovani smo za izradu visokokvalitetnih kuhinja po
+        meri, prilagođenih vašem ukusu, stilu i potrebama. Pored kuhinja,
+        izrađujemo komade, ormare, stolove i druge elemenate, vodeći računa o
+        svakom detalju kako bismo ispunili vaša očekivanja – na vreme.
       </motion.div>
       <div className="middle">
         <motion.div
@@ -58,19 +55,14 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="info"
         >
-          <h3>We Bring Your Ideas to Life</h3>
+          <h3>Pretvaramo vaše ideje u stvarnost</h3>
           <p>
-            For over 60 years, Justice has been manufacturing high-quality
-            commercial furniture and mattresses for hotels, resorts, senior
-            living, and other facilities. Using domestically sourced materials,
-            our experienced team of craftsmen design and build durable
-            furniture—on-time and with competitive pricing—that can withstand
-            high traffic and challenging environments. From large scale guest
-            rooms to small public space areas, you can rest assured that we will
-            be here for you every step of the way. We custom-build sofas,
-            chairs, ottomans, headboards, benches, booths, banquettes, and your
-            creations to your specifications, delivering on budget and on
-            schedule.
+            Sa dugogodišnjim iskustvom u proizvodnji nameštaja, naš tim iskusnih
+            majstora koristi najkvalitetnije materijale i pažljivo izrađuje
+            svaki komad, osiguravajući savršen spoj funkcionalnosti, estetike i
+            trajnosti. Bez obzira da li je reč o modernim minimalističkim
+            rešenjima ili klasičnom, toplom dizajnu, tu smo da vašu viziju
+            pretvorimo u stvarnost.
           </p>
         </motion.div>
       </div>

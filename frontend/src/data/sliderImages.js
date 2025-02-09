@@ -1,23 +1,28 @@
-import image1 from "../assets/JUS-Hero-Mattress.jpg";
-
-import image3 from "../assets/Kuhinja-Atina-2-e1730295717987.png";
-import image4 from "../assets/premium_photo-1680382578857-c331ead9ed51.jpg";
+import pic1 from "../assets/galery/pic14.jpg";
+import pic2 from "../assets/galery/pic15.jpg";
+import pic3 from "../assets/galery/pic1.jpg";
+import pic13 from "../assets/galery/pic16.jpg";
 
 const sliderImages = [
   {
-    imgURL: image1,
+    imgURL: pic13,
     imgAlt: "img1",
-    note: { first: "Designed ", second: "to fit your home" },
+    note: { first: "Nameštaj ", second: "kakav zaslužujete" },
   },
   {
-    imgURL: image3,
+    imgURL: pic3,
     imgAlt: "img3",
-    note: { first: "A good night sleep", second: " beguins here" },
+    note: { first: "Izrada nameštaja", second: " po meri i želji kupca" },
   },
   {
-    imgURL: image4,
+    imgURL: pic2,
     imgAlt: "img4",
-    note: { first: "Proudly crafted", second: " by Serbian hands" },
+    note: { first: "Kvalitet", second: " na prvom mestu" },
+  },
+  {
+    imgURL: pic1,
+    imgAlt: "img4",
+    note: { first: "Isporuka", second: " i motaža" },
   },
 ];
 

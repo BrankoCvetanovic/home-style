@@ -13,8 +13,13 @@
         @content;
 }
 }
-@mixin media-xlarge{
-    @media screen and (min-width: 1550px) {
+@mixin media-1080{
+    @media screen and (max-width: 1080px) {
+        @content;
+        }
+}
+@mixin large{
+    @media screen and (max-width: 1500px) {
         @content;
         }
 }

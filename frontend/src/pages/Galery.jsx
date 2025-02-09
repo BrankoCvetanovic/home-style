@@ -14,11 +14,17 @@ export default function GaleryPage() {
   return (
     <div className="galery">
       <div className="info">
-        <h1>Our Galery</h1>
+        <h1>Naša Galerija</h1>
         <p>
-          Browse Installation Photos, Design Examples, and High-Quality
-          Photorealistic Renderings by Our Talented Team
+          Pregledajte fotografije gotovih kuhinja, dizajnerske ideje i primere
+          naše izrade.
         </p>
+        <div>
+          Naša celokupna galerija nalazi se na našem instagram profilu:{" "}
+          <a href="https://www.instagram.com/retrostylenamestaj/">
+            retrostylenamestaj
+          </a>
+        </div>
       </div>
       <ul className="galery-container">
         {galeryImages.map((image, index) => (
@@ -28,6 +34,12 @@ export default function GaleryPage() {
         ))}
       </ul>
       <ImageModal ref={modal} image={imageRef} />
+      <div className="info">
+        Naša celokupna galerija nalazi se na našem instagram profilu:{" "}
+        <a href="https://www.instagram.com/retrostylenamestaj/">
+          retrostylenamestaj
+        </a>
+      </div>
     </div>
   );
 }

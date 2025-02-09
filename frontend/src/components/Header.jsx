@@ -5,6 +5,7 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import logo from "../assets/logo.jpg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,19 +40,19 @@ export default function Header() {
 
   return (
     <motion.div style={colorSettings} className="header">
-      <div className="logo">Logo</div>
+      <img className="logo" src={logo} alt="" />
       <div className={isOpen ? "nav-bar active" : "nav-bar"}>
         <IconButton onClick={handleCloseMenu} className="close">
           <CloseIcon />
         </IconButton>
         <NavLink onClick={handleCloseMenu} to={"/"}>
-          Home
+          Početna
         </NavLink>
         <NavLink onClick={handleCloseMenu} to={"/galery"}>
-          Galery
+          Galerija
         </NavLink>
         <NavLink onClick={handleCloseMenu} to={"/contact"}>
-          Contact
+          Kontakt
         </NavLink>
         <IconButton>
           <ContrastIcon />

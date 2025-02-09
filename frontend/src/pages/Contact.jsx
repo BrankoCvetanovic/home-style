@@ -1,5 +1,5 @@
-import { Email, Phone } from "@mui/icons-material";
-import kuhinja from "../assets/Kuhinja-Atina-2-e1730295717987.png";
+import { Email, Phone, Instagram } from "@mui/icons-material";
+import kuhinja from "../assets/galery/pic2.jpg";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 export default function ContactPage() {
@@ -12,11 +12,18 @@ export default function ContactPage() {
         <h1>Kontakt</h1>
         <div className="contact-info">
           <p>
-            <Email /> Email:{" "}
+            <Email /> Email:
             <a href="mailto:example@email.com">example@email.com</a>
           </p>
           <p>
-            <Phone /> Telefon: <a href="tel:+381601234567">+381 60 123 4567</a>
+            <Phone /> Telefon:
+            <a href="tel:+381601234567">+381 60 123 4567</a>
+          </p>
+          <p>
+            <Instagram /> Instagram:
+            <a href="https://www.instagram.com/retrostylenamestaj/">
+              retrostylenamestaj
+            </a>
           </p>
         </div>
         <div className="map-container">

@@ -15,7 +15,7 @@ export default function ImageSlider({ children }) {
         setTimeout(() => {
           slideNext();
           setSlideDone(true);
-        }, 100000)
+        }, 20000)
       );
     }
   }, [slideDone]);

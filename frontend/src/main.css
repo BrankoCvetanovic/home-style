@@ -63,9 +63,10 @@
 }
 
 .slider__item {
+  padding: 0px 100px;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   background: white;
   padding-bottom: 10px;
   box-sizing: border-box;
@@ -88,13 +89,13 @@
   color: #3d3d3d;
   z-index: 122;
   padding: 20px;
-  max-width: 40%;
+  max-width: 35%;
   height: -moz-fit-content;
   height: fit-content;
   bottom: 0px;
   left: 0;
-  padding: 8% 2%;
-  font-size: 4rem;
+  padding: 8% 1%;
+  font-size: 3rem;
   font-weight: 700;
   font-family: "DM Serif Display", serif;
 }
@@ -141,13 +142,19 @@
     display: none;
   }
 }
-@media screen and (min-width: 1550px) {
-  .slider__item img {
-    min-width: 100%;
+@media screen and (max-width: 1080px) {
+  .slider__item {
+    padding: 0;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .image-note {
+    background: rgba(182, 159, 91, 0.5176470588);
   }
 }
 .header {
-  padding: 25px 100px;
+  padding: 10px 100px;
   position: fixed;
   display: flex;
   right: 0;
@@ -165,7 +172,7 @@
 }
 
 .logo {
-  font-size: 2rem;
+  height: 60px;
 }
 
 .nav-bar {
@@ -223,8 +230,8 @@
 .home-about {
   position: relative;
   border-top: 2px solid #b6a05b;
-  margin: 200px 10%;
-  margin-bottom: 100px;
+  margin: 150px 10%;
+  margin-bottom: 0px;
   padding: 10%;
   font-size: 1.6rem;
 }
@@ -265,7 +272,7 @@
   color: #3d3d3d;
 }
 .middle .info p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 @media screen and (max-width: 900px) {
@@ -295,12 +302,15 @@
 }
 .galery .info {
   text-align: center;
+  font-size: 1.2rem;
 }
 .galery .info h1 {
   color: rgb(6, 42, 6);
 }
-.galery .info p {
-  font-size: 1.2rem;
+.galery .info a {
+  color: rgb(6, 42, 6);
+  font-weight: 600;
+  text-decoration: underline;
 }
 .galery .galery-container {
   display: grid;
@@ -322,11 +332,16 @@
   margin: 0;
   padding: 0;
   border: none;
-  width: 60%;
+  max-width: 70%;
+  background: transparent;
   outline: none;
 }
+.image-modal .image-container {
+  display: flex;
+  justify-content: center;
+}
 .image-modal img {
-  width: 100%;
+  max-height: 700px;
   z-index: 20;
 }
 .image-modal::backdrop {
@@ -459,9 +474,22 @@ h1 {
   background: #292929;
   color: #f4f3ef;
   align-items: center;
-  gap: 40px;
-  padding: 20px 100px;
+  gap: 20px;
+  padding: 10px 40px;
 }
-.footer h1 {
+.footer .first {
   flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    padding: 5px 20px;
+    gap: 5px;
+  }
+  .footer .logo {
+    height: 40px;
+  }
 }/*# sourceMappingURL=main.css.map */

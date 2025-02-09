@@ -37,9 +37,23 @@ h1{
     background: #292929;
     color: #f4f3ef;
     align-items: center;
-    gap: 40px;
-    padding: 20px 100px;
-    h1{
+    gap: 20px;
+    padding: 10px 40px;
+    .first{
         flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
+@include media-mmd{
+}
+@include media-md{
+    .footer{
+        padding: 5px 20px;
+        gap:5px;
+        .logo{
+           height: 40px;
+        }
     }
 }
