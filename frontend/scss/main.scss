@@ -46,6 +46,16 @@ h1{
         gap: 20px;
     }
 }
+.error-container{
+    padding-top:10% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .pending{
+    display: flex;
+    justify-content: center;
+}
 @include media-mmd{
 }
 @include media-md{
