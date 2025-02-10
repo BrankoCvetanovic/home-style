@@ -44,11 +44,29 @@
         justify-content: center;
     }
     img{
-        max-height: 700px;
+        max-height: 90vh;
         z-index: 20;
     }
+    
     &::backdrop{
         background-color: rgba(0, 0, 0, 0.7);
+    }
+    button{
+        position: absolute;
+        z-index: 30;
+        color: white;
+        background: #6b69698b;
+        &:hover{
+            background: #585757ae;
+        }
+    }
+    .left{
+        left: 10px;
+        top: 50%;
+    }
+    .right{
+        right: 10px;
+        top:50%
     }
 }
 
@@ -65,6 +83,7 @@
         }
     }
     .image-modal{
-        width: 90%; 
+        width: 90%;
+        img{width: 100%;}
     }
 }

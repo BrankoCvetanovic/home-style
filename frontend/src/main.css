@@ -341,11 +341,28 @@
   justify-content: center;
 }
 .image-modal img {
-  max-height: 700px;
+  max-height: 90vh;
   z-index: 20;
 }
 .image-modal::backdrop {
   background-color: rgba(0, 0, 0, 0.7);
+}
+.image-modal button {
+  position: absolute;
+  z-index: 30;
+  color: white;
+  background: rgba(107, 105, 105, 0.5450980392);
+}
+.image-modal button:hover {
+  background: rgba(88, 87, 87, 0.6823529412);
+}
+.image-modal .left {
+  left: 10px;
+  top: 50%;
+}
+.image-modal .right {
+  right: 10px;
+  top: 50%;
 }
 
 @media screen and (max-width: 900px) {
@@ -360,6 +377,9 @@
   }
   .image-modal {
     width: 90%;
+  }
+  .image-modal img {
+    width: 100%;
   }
 }
 .contact-page {

@@ -11,6 +11,21 @@ export default function GaleryPage() {
     modal.current.open();
   }
 
+  function changeToPrevImg(id) {
+    if (id === 1) {
+      setImageRef(galeryImages[galeryImages.length - 1]);
+    } else {
+      setImageRef(galeryImages[id - 2]);
+    }
+  }
+  function changeToNextImg(id) {
+    if (id === galeryImages.length) {
+      setImageRef(galeryImages[0]);
+    } else {
+      setImageRef(galeryImages[id]);
+    }
+  }
+
   return (
     <div className="galery">
       <div className="info">
@@ -28,12 +43,18 @@ export default function GaleryPage() {
       </div>
       <ul className="galery-container">
         {galeryImages.map((image, index) => (
-          <li onClick={() => handleOpenImage(image)} key={index}>
-            <img src={image} alt="" />
+          <li onClick={() => handleOpenImage(image)} key={image.id}>
+            <img src={image.img} alt="" />
           </li>
         ))}
       </ul>
-      <ImageModal ref={modal} image={imageRef} />
+      <ImageModal
+        ref={modal}
+        image={imageRef.img}
+        index={imageRef.id}
+        leftButton={changeToPrevImg}
+        rightButton={changeToNextImg}
+      />
       <div className="info">
         Naša celokupna galerija nalazi se na našem instagram profilu:{" "}
         <a href="https://www.instagram.com/retrostylenamestaj/">
